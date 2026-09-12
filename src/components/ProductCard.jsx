@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { ShoppingCart, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCartStore } from '../context/store';
@@ -26,7 +26,7 @@ const ProductCard = ({ producto }) => {
         _id: producto._id,
         nombre: producto.nombre,
         precio: precioFinal,
-        imagen: producto.imagen,
+        imagen: producto.imagenes?.[0] || producto.imagen,
       },
       1
     );
@@ -45,10 +45,11 @@ const ProductCard = ({ producto }) => {
         {/* IMAGEN */}
         <div className="relative aspect-square overflow-hidden bg-dark-700">
           <img
-            src={producto.imagen || 'https://via.placeholder.com/400x400/12121a/00F0FF?text=Tatos+Print'}
+            src={producto.imagenes?.[0] || producto.imagen || ''}
             alt={producto.nombre}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
+            onError={(e) => {               e.currentTarget.style.display = 'none';             }}
           />
 
           {/* Badge categoría */}
