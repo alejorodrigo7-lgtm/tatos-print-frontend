@@ -22,7 +22,7 @@ const FORM_VACIO = {
 };
 
 const TIPOS = ['Figuras', 'Llaveros', 'Adornos', 'Lapiceros'];
-const TAMAÑOS = ['5cm', '8cm', '12cm', '18cm', '25cm'];
+const TAMAÑOS = ['5cm', '6cm', '7cm', '8cm', '9cm', '10cm', '11cm', '12cm', '13cm', '14cm', '15cm', '16cm', '17cm', '18cm', '19cm', '20cm', '21cm', '22cm', '23cm', '24cm', '25cm', '26 cm', '27cm', '28cm', '29cm', '30cm'];
 
 const ProductosAdmin = () => {
   const [productos, setProductos] = useState([]);
